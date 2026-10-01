@@ -24,12 +24,12 @@ WebClient (Reactor)
 
 ## Структура проекта
 
-\`\`\`
+```
 travel-project/
 ├── backend/      # Spring Boot приложение
 ├── frontend/     # HTML/CSS/JS
 └── docker-compose.yml
-\`\`\`
+```
 
 ## Запуск проекта
 
@@ -41,25 +41,25 @@ travel-project/
 ### Шаги
 
 1. Склонировать репозиторий:
-\`\`\`bash
+```bash
 git clone https://github.com/lukinadiana-creator/travel-project.git
 cd travel-project
-\`\`\`
+```
 
 2. Скопировать `.env.example` в `.env` и заполнить своими ключами:
-\`\`\`bash
+```bash
 cp .env.example .env
-\`\`\`
+```
 
 3. Поднять базу данных:
-\`\`\`bash
+```bash
 docker-compose up -d
-\`\`\`
+```
 
 4. Запустить backend:
-\`\`\`bash
+```bash
 cd backend
 ./mvnw spring-boot:run
-\`\`\`
+```
 
 5. Открыть `frontend/index.html` в браузере (например, через расширение Live Server в VS Code)

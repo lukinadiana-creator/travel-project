@@ -1,0 +1,460 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background: #FFFFFF;
+    padding: 20px 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#favoritesNavItem {
+    display: none;
+}
+
+.logo a{
+    text-decoration: none;
+    font-size: 64px;
+    font-family: 'Montserrat', sans-serif;
+    color: #E2725B;
+    margin: 0;
+}
+
+.logo a:hover {
+    color: #d9634e;
+}
+
+.nav > ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+}
+
+.nav a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: #1E1E1E;
+    font-size: 36px;
+}
+
+.nav a:hover {
+    color: #6b6b6b;
+}
+
+.nav ul li {
+    position: relative;
+    list-style: none;
+}
+
+.dropdown {
+    position: absolute;
+    background: #FFFFFF;
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: none;
+}
+
+nav li:hover .dropdown {
+    display: block;
+}
+
+.dropdown a {
+    display: block;
+    padding: 8px 20px;
+    color: #1E1E1E;
+    font-size: 34px;
+}
+
+.dropdown a:hover {
+    color: #6b6b6b;
+}
+
+.search {
+    height: 800px;
+    background: #E2725B;
+}
+
+.title {
+    color: #FFFFFF;
+    font-size: 66px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding-top: 150px;
+    margin-bottom: 100px;
+}
+
+.search-form {
+    background: #FFFFFF;
+    padding: 70px;
+    border-radius: 30px;
+    width: 1700px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.search-form_label {
+    grid-row: 1;
+    font-size: 34px;
+    font-family: 'Montserrat', sans-serif;
+    color: #1E1E1E;
+    margin-bottom: 5px;
+}
+
+.search-form__input {
+    width: 100%;
+    padding: 12px 16px;
+    background: #ededed;
+    border: none;
+    border-radius: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    grid-row: 2;
+    color: #4a5568;
+}
+
+.search-form__input:focus {
+    outline: none;
+}
+
+.search-form_button {
+    grid-column: 5;
+    grid-row: 3;
+    padding: 16px 16px;
+    font-family: 'Montserrat', sans-serif;
+    background: #E2725B;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 14px;
+    font-size: 34px;
+}
+
+.search-form_button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.destinations {
+    max-width: 2500px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.destinations_title {
+    color: #1E1E1E;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 85px;
+}
+
+.destinations_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card__image {
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    background-color: #a7a7a7;
+}
+
+.card__title {
+    font-size: 40px;
+    font-weight: bold;
+    color: #1E1E1E;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 5px;
+}
+
+.card__subtitle {
+    font-size: 34px;
+    color: #1E1E1E;
+    font-family: 'Montserrat', sans-serif;
+    /* margin-bottom: 15px; */
+}
+
+.favorite-btn {
+    position: absolute;
+
+    top: 35px;
+    right: 35px;
+
+    height: 70px;
+    width: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #FFFFFF;
+
+    cursor: pointer;
+
+    z-index: 2;
+
+    transition: transform 0.2s,
+                box-shadow 0.2s;
+}
+
+.favorite-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.favorite-btn img {
+    height: 40px;
+    width: 40px;
+
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   AUTH OVERLAY
+===================================================== */
+.auth-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+/* Открыто */
+.auth-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.auth-modal {
+    position: relative;
+    width: 760px;
+    min-height: 650px;
+    box-sizing: border-box;
+    padding: 70px 80px;
+    background: #FFFFFF;
+    border: 1px solid #eeeeee;
+    border-radius: 28px;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(25px) scale(0.97);
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+/* Анимация появления */
+.auth-overlay.active .auth-modal {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* =====================================================
+   CLOSE
+===================================================== */
+.auth-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    background: transparent;
+    color: #666;
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.auth-close:hover {
+    color: #E2725B;
+    transform: rotate(90deg);
+}
+
+/* =====================================================
+   LOGIN / REGISTER
+===================================================== */
+
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+}
+
+/* Заголовок */
+.auth-form h2 {
+    margin: 0 0 15px;
+    text-align: center;
+    color: #1E1E1E;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 58px;
+    font-weight: 700;
+}
+
+/* Подзаголовок */
+.auth-subtitle {
+    margin: 0 0 70px;
+    text-align: center;
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.form-group {
+    margin-bottom: 38px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 12px;
+    color: #1E1E1E;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    height: 90px;
+    box-sizing: border-box;
+    padding: 0 30px;
+    border: 2px solid #e1e4e8;
+    border-radius: 20px;
+    outline: none;
+    background: #fafafa;
+    color: #1E1E1E;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    transition: 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #E2725B;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(226, 114, 91, 0.12);
+}
+
+.form-group input::placeholder {
+    color: #777;
+}
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+.auth-submit {
+    width: 100%;
+    height: 95px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 20px;
+    background: #E2725B;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 34px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.auth-submit:hover {
+    background: #d9634e;
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   SWITCH LOGIN / REGISTER
+===================================================== */
+
+.auth-switch {
+    margin-top: 50px;
+    text-align: center;
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.auth-switch button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #E2725B;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.auth-switch button:hover {
+    text-decoration: underline;
+}
+
+.input-error {
+    border: 1px solid #e74c3c !important;
+    background-color: #fef5f5;
+}
+
+.field-error-message {
+    display: block;
+    color: #e74c3c;
+    font-size: 24px;
+    margin-top: 4px;
+}

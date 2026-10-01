@@ -1,0 +1,366 @@
+/* =========================
+   ACCOUNT PAGE
+========================= */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #1E1E1E;
+    background-color: #FFFFFF;
+}
+
+.account-page {
+    max-width: 2500px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.page-title {
+    color: #1E1E1E;
+    font-size: 56px;
+    font-weight: 700;
+    margin-top: 80px;
+    margin-bottom: 85px;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.account-content {
+    display: grid;
+
+    grid-template-columns: max-content 1fr;
+
+    gap: 40px;
+    align-items: start;
+}
+
+
+/* =========================
+   LEFT COLUMN
+========================= */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.profile-card,
+.statistics-card,
+.orders-section {
+    background-color: #FFFFFF;
+
+    border: 1px solid #eeeeee;
+    border-radius: 20px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-card {
+    padding: 32px 35px;
+    text-align: center;
+    align-items: center;
+
+    min-width: 450px;  
+    max-width: 800px;
+}
+
+.avatar {
+    width: 172px;
+    height: 172px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #E2725B;
+    border-radius: 50%;
+}
+
+
+/* Иконка пользователя */
+
+.avatar-icon {
+    position: relative;
+
+    width: 90px;
+    height: 100px;
+}
+
+.avatar-head {
+    position: absolute;
+
+    top: 5px;
+    left: 31px;
+
+    width: 31px;
+    height: 31px;
+
+    border: 6px solid #FFFFFF;
+    border-radius: 50%;
+}
+
+.avatar-body {
+    position: absolute;
+
+    bottom: 0;
+    left: 12px;
+
+    width: 68px;
+    height: 45px;
+
+    border: 6px solid #FFFFFF;
+    border-bottom: none;
+
+    border-radius: 40px 40px 0 0;
+}
+
+
+.profile-card h3 {
+    margin-bottom: 14px;
+
+    color: #1E1E1E;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   CONTACTS
+========================= */
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-info p {
+    justify-content: center;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    color: #666666;
+    font-size: 30px;
+}
+
+.profile-info p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   ORDERS
+========================= */
+
+.orders-section {
+    padding: 34px;
+}
+
+.orders-title {
+    margin-bottom: 32px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    color: #1E1E1E;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   ORDER CARD
+========================= */
+
+.order-card {
+    margin-bottom: 20px;
+    padding: 25px;
+
+    background-color: #FFFFFF;
+
+    border: 1px solid #eeeeee;
+    border-radius: 17px;
+
+    transition: 0.2s;
+}
+
+.order-card:last-child {
+    margin-bottom: 0;
+}
+
+.order-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+
+/* Верхняя часть заказа */
+
+.order-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.order-id {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #666666;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.order-top h3 {
+    margin-bottom: 7px;
+
+    color: #1E1E1E;
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.location {
+    color: #666666;
+    font-size: 30px;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.order-status {
+    height: fit-content;
+
+    padding: 9px 16px;
+
+    border-radius: 20px;
+
+    color: #E2725B;
+    background-color: #fff1ed;
+
+    font-size: 30px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   ORDER BOTTOM
+========================= */
+
+.order-bottom {
+    padding-top: 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.order-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+
+    color: #666666;
+    font-size: 28px;
+}
+
+.order-details strong {
+    color: #1E1E1E;
+    font-weight: 500;
+}
+
+.order-price {
+    color: #E2725B;
+
+    font-size: 30px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.empty-orders {
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.empty-orders-icon {
+    margin-bottom: 25px;
+    color: #666;
+    font-size: 90px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.empty-orders h2 {
+    margin: 0 0 14px;
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.empty-orders p {
+    max-width: 1200px;
+    margin: 0;
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+.profile-name-row {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.edit-name-icon {
+    /* position: absolute; */
+    /* right: -28px; */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 40px;
+    color: #999;
+    padding: 4px;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.edit-name-icon:hover {
+    color: #333;
+}

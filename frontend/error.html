@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        .error-page {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFFFFF;
+            padding: 60px 40px;
+        }
+    
+        .error-content {
+            max-width: 900px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .error-code {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 220px;
+            line-height: 1;
+            color: #E2725B;
+            margin-bottom: 10px;
+        }
+    
+        .error-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 44px;
+            color: #E2725B;
+            margin-bottom: 20px;
+        }
+    
+        .error-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 36px;
+            color: #666;
+            margin-bottom: 45px;
+            max-width: 620px;
+        }
+    
+        .error-actions {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    
+        .error-btn {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 34px;
+            font-weight: 600;
+            padding: 20px 44px;
+            border-radius: 45px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            display: inline-block;
+        }
+    
+        .error-btn:hover {
+            transform: translateY(-3px);
+        }
+    
+        .error-btn.primary {
+            background: #E2725B;
+            color: #FFFFFF;
+            box-shadow: 0 10px 20px rgba(226, 114, 91, 0.3);
+        }
+    
+        .error-btn.primary:hover {
+            box-shadow: 0 14px 26px rgba(226, 114, 91, 0.4);
+        }
+    
+        .error-btn.secondary {
+            background: #FFFFFF;
+            color: #E2725B;
+            border: 2px solid #E2725B;
+        }
+    
+        .error-btn.secondary:hover {
+            box-shadow: 0 10px 20px rgba(226, 114, 91, 0.15);
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-content">
+            <div class="error-code">500</div>
+            <div class="error-title">Ой, что-то пошло не так...</div>
+            <div class="error-subtitle">
+                Попробуйте вернуться на главную или продолжить поиск туров.
+            </div>
+            <div class="error-actions">
+                <a href="index.html" class="error-btn primary">На главную</a>
+                <a href="tours.html" class="error-btn secondary">Поиск туров</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,204 @@
+/* =========================
+   FAVORITES PAGE
+========================= */
+
+.favorites-page {
+    max-width: 2500px;
+    margin: 0 auto;
+/* 
+    padding: 50px 30px 80px; */
+    padding: 40px 20px;
+
+    font-family: 'Montserrat', sans-serif;
+    color: #1E1E1E;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.favorites-title {
+    color: #1E1E1E;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 56px;
+    margin-top: 80px;
+    margin-bottom: 85px;
+}
+
+/* .favorites-title-icon {
+    color: #E2725B;
+
+    font-size: 50px;
+    line-height: 1;
+} */
+
+
+/* =========================
+   TABS
+========================= */
+
+.favorites-tabs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 45px;
+}
+
+.favorites-tab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 25px 18px;
+    border: none;
+    background: none;
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.favorites-tab .tab-icon {
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    line-height: 1;
+}
+
+.favorites-tab span {
+    font-size: 36px;
+}
+
+.favorites-tab b {
+    min-width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f1f1f1;
+    color: #666;
+    font-size: 22px;
+}
+
+.favorites-tab.active {
+    color: #E2725B;
+}
+
+.favorites-tab.active b {
+    background: #E2725B;
+    color: #FFFFFF;
+}
+
+.favorites-tab.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -1px;
+
+    height: 4px;
+
+    background: #E2725B;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.favorites-content {
+    display: none;
+}
+
+.favorites-content.active {
+    display: block;
+}
+
+/* =========================
+   FAVORITE BUTTON
+========================= */
+
+.favorite-btn {
+    position: absolute;
+
+    top: 35px;
+    right: 35px;
+
+    height: 70px;
+    width: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #FFFFFF;
+
+    cursor: pointer;
+
+    z-index: 2;
+
+    transition: transform 0.2s,
+                box-shadow 0.2s;
+}
+
+.favorite-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.favorite-btn img {
+    height: 40px;
+    width: 40px;
+
+    object-fit: contain;
+}
+
+
+.empty-favorites {
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+.empty-heart {
+    margin-bottom: 25px;
+    color: #666;
+    font-size: 90px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.empty-favorites h2 {
+    margin: 0 0 14px;
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.empty-favorites p {
+    max-width: 1200px;
+    margin: 0;
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    line-height: 1.5;
+}

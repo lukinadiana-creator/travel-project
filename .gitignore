@@ -1,0 +1,9 @@
+# Секреты
+.env
+
+# ОС
+.DS_Store
+Thumbs.db
+
+# Frontend
+frontend/.vscode/

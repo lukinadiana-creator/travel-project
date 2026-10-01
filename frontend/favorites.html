@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/tours.css">
+    <link rel="stylesheet" href="css/favorites.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo"><a href="index.html">Travel Assistant</a></h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="tours.html">Поиск туров</a></li>
+                <li><a href="attractions.html">Что посмотреть</a></li>
+                <li><a href="food.html">Где поесть</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="favorites.html">Избранное</a></li>
+                <li><a href="account.html">Личный кабинет</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Войти</a></li>
+                        <li><a href="#">Зарегестрироваться</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="favorites-page">
+
+        <h1 class="favorites-title">
+            Избранное
+        </h1>
+    
+        <!-- ВКЛАДКИ -->
+        <div class="favorites-tabs">
+    
+            <!-- <button class="favorites-tab active" data-category="tours">
+                <span>Туры</span>
+                <b>0</b>
+            </button> -->
+    
+            <button class="favorites-tab" data-category="attractions">
+                <span>Достопримечательности</span>
+                <b>0</b>
+            </button>
+    
+            <button class="favorites-tab" data-category="restaurants">
+                <span>Рестораны</span>
+                <b>0</b>
+            </button>
+    
+        </div>
+
+        <!-- <section class="favorites-content active" id="tours">
+            <div class="tours_grid"></div>
+        </section> -->
+        
+        
+        <section class="favorites-content" id="attractions">
+            <div class="entertainments_grid"></div>
+        </section>
+        
+        
+        <section class="favorites-content" id="restaurants">
+            <div class="entertainments_grid"></div>
+        </section>
+    
+    
+        <script src="scripts/auth.js"></script>
+        <script src="scripts/favorites-shared.js"></script>
+        <script src="scripts/favorites.js"></script>
+</body>
+</html>

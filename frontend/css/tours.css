@@ -1,0 +1,225 @@
+.search-tours {
+    min-height: 330px;
+    background: #E2725B;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    transition: min-height 0.3s ease;
+}
+
+.search-tours--empty {
+    min-height: calc(100vh - 98px);
+}
+
+.popular-routes {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.popular-routes__hint {
+    color:#FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    margin-bottom: 24px;
+}
+
+.popular-routes__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    max-width: 1400px;
+}
+
+.route-chip {
+    padding: 16px 32px;
+    border-radius: 45px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: transparent;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 34px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s, color 0.2s;
+}
+
+.route-chip:hover {
+    background: #FFFFFF;
+    color: #E2725B;
+    transform: translateY(-2px);
+}
+
+.search-tours-form {
+    background: #FFFFFF;
+    padding: 50px;
+    border-radius: 30px;
+    width: 2500px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) auto;
+    gap: 20px;
+    align-items: end;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.tours-search-form_label {
+    font-size: 34px;
+    font-family: 'Montserrat', sans-serif;
+    color: #1E1E1E;
+    margin-bottom: 14px;
+}
+
+.tours-search-form__input {
+    width: 100%;
+    padding: 12px 16px;
+    background: #ededed;
+    border: none;
+    border-radius: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    color: #4a5568;
+}
+
+.tours-search-form__input:focus {
+    outline: none;
+}
+
+.search-tours-form_button {
+    padding: 16px 16px;
+    font-family: 'Montserrat', sans-serif;
+    background: #E2725B;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 14px;
+    font-size: 34px;
+}
+
+.search-tours-form_button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tours {
+    max-width: 2500px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.tours_title {
+    color: #1E1E1E;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 56px;
+    margin-top: 80px;
+    margin-bottom: 85px;
+}
+
+.tours_grid {
+    display: grid;
+    gap: 35px;
+}
+
+.card-tours {
+    position: relative;
+    background: #FFFFFF;
+    height: 450px;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card-tours:hover {
+    transform: translateY(-5px);
+}
+
+.card-tours_image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 650px;
+    height: 100%;
+    background-color: #e2e8f0;
+    border-radius: 12px;
+}
+
+.card-tours_info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-tours_title {
+    color: #1E1E1E;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+}
+
+.card-tours_rating {
+    color: #E2725B;
+    font-size: 46px;
+    margin-bottom: 32px;
+}
+
+.card-tours_location {
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 34px;
+    margin-bottom: 32px;
+}
+
+.card-tours_price {
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    margin-bottom: 17px;
+}
+
+.card-tours_money {
+    color: #E2725B;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 56px;
+}
+
+.details-btn {
+    position: absolute;
+    right: 35px;
+    bottom: 58px;
+    border: none;
+    background: #E2725B;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 34px;
+    padding: 16px 22px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease,
+                transform 0.2s ease;
+}
+
+
+.details-btn span {
+    font-size: 30px;
+    line-height: 1;
+}
+
+.details-btn:hover {
+    background: #d9634e;
+}
+
+.details-btn:active {
+    transform: scale(0.97);
+}

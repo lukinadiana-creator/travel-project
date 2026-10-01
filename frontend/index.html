@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Assistant</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+            <h1 class="logo"><a href="index.html">Travel Assistant</a></h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="tours.html">Поиск туров</a></li>
+                    <li><a href="attractions.html">Что посмотреть</a></li>
+                    <li><a href="food.html">Где поесть</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li id="favoritesNavItem"><a href="favorites.html">Избранное</a></li>
+                    <li><a href="#" id="loginButton">Войти</a></li>
+                </ul>
+            </nav>
+    </header>
+
+    <main>
+        <div class="search">
+            <h1 class="title">Найдите свое идеальное путешествие</h1>
+            
+            <form class="search-form" action="tours.html">
+                <label for="city-from" class="search-form_label">Откуда</label>
+                <input type="text" id="city-from" name="city-from" class="search-form__input" placeholder="Город вылета">
+
+                <label for="city-to" class="search-form_label">Куда</label>
+                <input type="text" id="city-to" name="city-to" class="search-form__input" placeholder="Город назначения">
+            
+                <label for="date" class="search-form_label">Дата вылета</label>
+                <input type="date" id="date" name="departure_date" class="search-form__input" value="2026-01-01">
+            
+                <label for="night" class="search-form_label">Количество ночей</label>
+                <input type="number" id="night" name="number_nights" class="search-form__input" value="7" min="1">
+            
+                <label for="person" class="search-form_label">Количество персон</label>
+                <input type="number" id="person" name="number_persons" class="search-form__input" value="2" min="1">
+
+                <button type="submit" class="search-form_button">Найти туры</button>
+            </form>
+        </div>
+
+        <div class="destinations">
+            <h2 class="destinations_title">Популярные направления</h2>
+            <div class="destinations_grid">
+                <div class="card">
+                    <img class="card__image" src="images/paris.jpg">
+                    <h3 class="card__title">Франция</h3>
+                    <p class="card__subtitle">Париж</p>
+                </div>
+                
+                <div class="card">
+                    <img class="card__image" src="images/bali.webp">
+                    <h3 class="card__title">Индонезия</h3>
+                    <p class="card__subtitle">Бали</p>
+                </div>
+                
+                <div class="card">
+                    <img class="card__image" src="images/dubai.webp">
+                    <h3 class="card__title">ОАЭ</h3>
+                    <p class="card__subtitle">Дубай</p>
+                </div>
+                
+                <div class="card">
+                    <img class="card__image" src="images/rome.webp">
+                    <h3 class="card__title">Италия</h3>
+                    <p class="card__subtitle">Рим</p>
+                </div>
+                
+                <div class="card">
+                    <img class="card__image" src="images/maldives.webp">
+                    <h3 class="card__title">Мальдивы</h3>
+                    <p class="card__subtitle">Мальдивы</p>
+                </div>
+                
+                <div class="card">
+                    <img class="card__image" src="images/barcelona.jpeg">
+                    <h3 class="card__title">Испания</h3>
+                    <p class="card__subtitle">Барселона</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="auth-overlay" id="authOverlay">
+        <div class="auth-modal">
+            <button class="auth-close" id="authClose">
+                &times;
+            </button>
+    
+            <!-- =========================
+                 ВХОД
+            ========================== -->
+            <div class="auth-form active" id="loginForm">
+                <h2>Вход</h2>
+                <p class="auth-subtitle">Войдите в свой аккаунт Travel Assistant</p>
+                <form id="loginFormElement">
+                    <div class="form-group">
+                        <label for="loginEmail">Электронная почта</label>
+                        <input type="email" id="loginEmail" placeholder="you@example.com" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="loginPassword">Пароль</label>
+                        <input type="password" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+    
+                    <button type="submit" class="auth-submit">Войти</button>
+                </form>
+    
+                <p class="auth-switch">
+                    Нет аккаунта?
+                    <button type="button" id="showRegister">Создать аккаунт</button>
+                </p>
+            </div>
+    
+    
+            <!-- =========================
+                 РЕГИСТРАЦИЯ
+            ========================== -->
+    
+            <div class="auth-form" id="registerForm">
+                <h2>Регистрация</h2>
+                <p class="auth-subtitle">Создайте аккаунт Travel Assistant</p>
+    
+                <form id="registerFormElement">
+                    <div class="form-group">
+                        <label for="registerEmail">Электронная почта</label>
+                        <input type="email" id="registerEmail" placeholder="you@example.com" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="registerPassword">Пароль</label>
+                        <input type="password" id="registerPassword" placeholder="••••••••" required>
+                    </div>
+    
+                    <button type="submit" class="auth-submit">Зарегистрироваться</button>
+                </form>
+    
+                <p class="auth-switch">Уже есть аккаунт?
+                    <button type="button" id="showLogin">Войти</button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/common.js"></script>
+</body>
+</html>

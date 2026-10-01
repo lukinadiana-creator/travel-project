@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo"><a href="index.html">Travel Assistant</a></h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="tours.html">Поиск туров</a></li>
+                <li><a href="attractions.html">Что посмотреть</a></li>
+                <li><a href="food.html">Где поесть</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li id="favoritesNavItem"><a href="favorites.html">Избранное</a></li>
+                <li><a href="#" id="loginButton">Войти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="about-page">
+
+        <section class="about-hero">
+            <h1>Travel Assistant</h1>
+            <p>Ваш надежный помощник в мире путешествий</p>
+        </section>
+
+        <section class="about-company">
+            <h2>О компании</h2>
+            <p>
+                Travel Assistant — это современный туристический сервис,
+                который помогает путешественникам находить идеальные туры,
+                достопримечательности и рестораны по всему миру.
+            </p>
+            <p>
+                Мы работаем с 2024 года и за это время помогли тысячам людей
+                организовать незабываемые путешествия. Наша миссия — сделать
+                планирование поездок простым, удобным и приятным.
+            </p>
+            <p>
+                Мы тщательно отбираем лучшие предложения, проверяем качество
+                отелей и услуг, и всегда готовы помочь нашим клиентам
+                на каждом этапе путешествия.
+            </p>
+        </section>
+
+        <section class="about-statistics">
+            <div class="about-stat-card">
+                <div class="about-stat-icon">
+                    <i class="fa-solid fa-plane"></i>
+                </div>
+                <div class="about-stat-number">5000+</div>
+                <div class="about-stat-label">Организованных туров</div>
+            </div>
+
+            <div class="about-stat-card">
+                <div class="about-stat-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <div class="about-stat-number">15000+</div>
+                <div class="about-stat-label">Довольных клиентов</div>
+            </div>
+
+            <div class="about-stat-card">
+                <div class="about-stat-icon">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <div class="about-stat-number">50+</div>
+                <div class="about-stat-label">Стран в портфолио</div>
+            </div>
+
+            <div class="about-stat-card">
+                <div class="about-stat-icon">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="about-stat-number">4.9</div>
+                <div class="about-stat-label">Средний рейтинг</div>
+            </div>
+        </section>
+
+        <section class="about-benefits">
+            <h2>Наши преимущества</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>Индивидуальный подход</h3>
+                    <p>
+                        Мы учитываем все ваши пожелания и подбираем туры,
+                        которые идеально вам подходят
+                    </p>
+                </div>
+
+                <div class="benefit-item">
+                    <h3>Лучшие цены</h3>
+                    <p>
+                        Работаем напрямую с отелями и авиакомпаниями,
+                        что позволяет предлагать выгодные цены
+                    </p>
+                </div>
+
+                <div class="benefit-item">
+                    <h3>Поддержка 24/7</h3>
+                    <p>
+                        Наши специалисты всегда на связи и готовы помочь
+                        в любой ситуации
+                    </p>
+                </div>
+
+                <div class="benefit-item">
+                    <h3>Проверенные партнеры</h3>
+                    <p>
+                        Сотрудничаем только с надежными отелями,
+                        ресторанами и туроператорами
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<div class="auth-overlay" id="authOverlay">
+    <div class="auth-modal">
+        <button class="auth-close" id="authClose">
+            &times;
+        </button>
+
+        <!-- =========================
+             ВХОД
+        ========================== -->
+        <div class="auth-form active" id="loginForm">
+            <h2>Вход</h2>
+            <p class="auth-subtitle">Войдите в свой аккаунт Travel Assistant</p>
+            <form id="loginFormElement">
+                <div class="form-group">
+                    <label for="loginEmail">Электронная почта</label>
+                    <input type="email" id="loginEmail" placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Пароль</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="auth-submit">Войти</button>
+            </form>
+
+            <p class="auth-switch">
+                Нет аккаунта?
+                <button type="button" id="showRegister">Создать аккаунт</button>
+            </p>
+        </div>
+
+
+        <!-- =========================
+             РЕГИСТРАЦИЯ
+        ========================== -->
+
+        <div class="auth-form" id="registerForm">
+            <h2>Регистрация</h2>
+            <p class="auth-subtitle">Создайте аккаунт Travel Assistant</p>
+
+            <form id="registerFormElement">
+                <div class="form-group">
+                    <label for="registerEmail">Электронная почта</label>
+                    <input type="email" id="registerEmail" placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerPassword">Пароль</label>
+                    <input type="password" id="registerPassword" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="auth-submit">Зарегистрироваться</button>
+            </form>
+
+            <p class="auth-switch">Уже есть аккаунт?
+                <button type="button" id="showLogin">Войти</button>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="scripts/auth.js"></script>
+</body>
+</html>

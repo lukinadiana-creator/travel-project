@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tours.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo"><a href="index.html">Travel Assistant</a></h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="tours.html">Поиск туров</a></li>
+                <li><a href="attractions.html">Что посмотреть</a></li>
+                <li><a href="food.html">Где поесть</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li id="favoritesNavItem"><a href="favorites.html">Избранное</a></li>
+                <li><a href="#" id="loginButton">Войти</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="search-tours" id="heroSection">
+            <form class="search-tours-form" action="tours.html">
+                <div class="search-form-group">
+                    <label for="city-from" class="tours-search-form_label">Откуда</label>
+                    <input type="text" id="city-from" name="city-from" class="tours-search-form__input" placeholder="Город вылета">
+                </div>
+
+                <div class="search-form-group">
+                    <label for="city-to" class="tours-search-form_label">Куда</label>
+                    <input type="text" id="city-to" name="city-to" class="tours-search-form__input" placeholder="Город назначения">
+                </div>
+            
+                <div class="search-form-group">
+                    <label for="date" class="tours-search-form_label">Дата вылета</label>
+                    <input type="date" id="date" name="departure_date" class="tours-search-form__input">
+                </div>
+            
+                <div class="search-form-group">
+                    <label for="night" class="tours-search-form_label">Количество ночей</label>
+                    <input type="number" id="night" name="number_nights" class="tours-search-form__input" value="7" min="1">
+                </div>
+            
+                <div class="search-form-group">
+                    <label for="person" class="tours-search-form_label">Количество персон</label>
+                    <input type="number" id="person" name="number_persons" class="tours-search-form__input" value="2" min="1">
+                </div>
+
+                <button type="submit" class="search-tours-form_button">Найти туры</button>
+            </form>
+
+            <div class="popular-routes" id="popularRoutes">
+                <p class="popular-routes__hint">Или выберите одно из популярных направлений</p>
+                <div class="popular-routes__list"></div>
+            </div>
+        </div>
+
+        <div class="tours" id="resultsSection" style="display:none;">
+            <h2 class="tours_title" id="toursTitle"></h2>
+
+            <div class="tours_grid"></div>
+        </div>
+    </main>
+
+    <div class="auth-overlay" id="authOverlay">
+        <div class="auth-modal">
+            <button class="auth-close" id="authClose">
+                &times;
+            </button>
+    
+            <!-- =========================
+                 ВХОД
+            ========================== -->
+            <div class="auth-form active" id="loginForm">
+                <h2>Вход</h2>
+                <p class="auth-subtitle">Войдите в свой аккаунт Travel Assistant</p>
+                <form id="loginFormElement">
+                    <div class="form-group">
+                        <label for="loginEmail">Электронная почта</label>
+                        <input type="email" id="loginEmail" placeholder="you@example.com" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="loginPassword">Пароль</label>
+                        <input type="password" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+    
+                    <button type="submit" class="auth-submit">Войти</button>
+                </form>
+    
+                <p class="auth-switch">
+                    Нет аккаунта?
+                    <button type="button" id="showRegister">Создать аккаунт</button>
+                </p>
+            </div>
+    
+    
+            <!-- =========================
+                 РЕГИСТРАЦИЯ
+            ========================== -->
+    
+            <div class="auth-form" id="registerForm">
+                <h2>Регистрация</h2>
+                <p class="auth-subtitle">Создайте аккаунт Travel Assistant</p>
+    
+                <form id="registerFormElement">
+                    <div class="form-group">
+                        <label for="registerEmail">Электронная почта</label>
+                        <input type="email" id="registerEmail" placeholder="you@example.com" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="registerPassword">Пароль</label>
+                        <input type="password" id="registerPassword" placeholder="••••••••" required>
+                    </div>
+    
+                    <button type="submit" class="auth-submit">Зарегистрироваться</button>
+                </form>
+    
+                <p class="auth-switch">Уже есть аккаунт?
+                    <button type="button" id="showLogin">Войти</button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/favorites-shared.js"></script>
+    <script src="scripts/tours.js"></script>
+    <script src="scripts/common.js"></script>
+</body>
+</html>

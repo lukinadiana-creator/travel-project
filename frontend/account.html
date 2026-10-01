@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo"><a href="index.html">Travel Assistant</a></h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="tours.html">Поиск туров</a></li>
+                <li><a href="attractions.html">Что посмотреть</a></li>
+                <li><a href="food.html">Где поесть</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li id="favoritesNavItem"><a href="favorites.html">Избранное</a></li>
+                <li><a href="account.html">Личный кабинет</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="account-page">
+
+        <h2 class="page-title">Личный кабинет</h2>
+    
+        <div class="account-content">
+    
+            <aside class="profile-column">
+                <section class="profile-card">
+                    <div class="avatar"></div>
+                    <div class="profile-name-row">
+                        <h3 id="profileName">Имя не указано</h3>
+                        <button id="editNameBtn" class="edit-name-icon" title="Изменить имя">
+                            ✎
+                        </button>
+                    </div>
+                
+                    <div class="profile-info">
+                        <p>ivan.ivanov@example.com</p>
+                    </div>
+                </section>
+
+                <div class="auth-overlay" id="editNameOverlay">
+                    <div class="auth-modal">
+                        <button class="auth-close" id="editNameClose">&times;</button>
+
+                        <div class="auth-form active">
+                            <h2>Изменить имя</h2>
+                            <p class="auth-subtitle">Укажите, как к вам обращаться</p>
+
+                            <form id="editNameForm">
+                                <div class="form-group">
+                                    <label for="nameInput">Имя</label>
+                                    <input type="text" id="nameInput" placeholder="Иван" required>
+                                </div>
+
+                                <button type="submit" class="auth-submit">Сохранить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+    
+            <section class="orders-section">
+    
+                <h3 class="orders-title">История заказов</h3>
+                <div id="ordersList" class="orders-grid"></div>
+
+            </section>
+        </div>
+    </main>
+
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/account.js"></script>
+</body>
+</html>

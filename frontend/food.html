@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/attractions_and_food.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo"><a href="index.html">Travel Assistant</a></h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="tours.html">Поиск туров</a></li>
+                <li><a href="attractions.html">Что посмотреть</a></li>
+                <li><a href="food.html">Где поесть</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li id="favoritesNavItem"><a href="favorites.html">Избранное</a></li>
+                <li><a href="#" id="loginButton">Войти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="search-entertainment" id="heroSection">
+            <h1 class="title-entertainment">Где поесть</h1>
+
+            <form class="search-entertainment-form" action="food.html">
+                <input type="text" id="city" name="city" class="search-form__input" placeholder="В каком городе ищете рестораны?">
+                <button type="submit" class="search-entertainment-form_button">Найти</button>
+            </form>
+
+            <div class="popular-cities" id="popularCities">
+                <p class="popular-cities__hint">Или выберите один из популярных городов</p>
+                <div class="popular-cities__list"></div>
+            </div>
+        </div>
+
+        <div class="entertainments" id="resultsSection" style="display:none;">
+            <div class="entertainments-header">
+                <h2 class="entertainments_title">Рекомендуемые рестораны</h2>
+        
+                <div class="view-switcher">
+                    <button type="button" class="view-switcher__button active" data-view="list">
+                        Списком
+                    </button>
+        
+                    <button type="button" class="view-switcher__button" data-view="map">
+                        На карте
+                    </button>
+                </div>
+            </div>
+
+            <div class="entertainments_grid" id="listView"></div>
+
+            <div class="entertainments_map" id="mapView"></div>
+        </div>
+    </main>
+
+    <div class="auth-overlay" id="authOverlay">
+        <div class="auth-modal">
+            <button class="auth-close" id="authClose">
+                &times;
+            </button>
+    
+            <!-- =========================
+                 ВХОД
+            ========================== -->
+            <div class="auth-form active" id="loginForm">
+                <h2>Вход</h2>
+                <p class="auth-subtitle">Войдите в свой аккаунт Travel Assistant</p>
+                <form id="loginFormElement">
+                    <div class="form-group">
+                        <label for="loginEmail">Электронная почта</label>
+                        <input type="email" id="loginEmail" placeholder="you@example.com" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="loginPassword">Пароль</label>
+                        <input type="password" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+    
+                    <button type="submit" class="auth-submit">Войти</button>
+                </form>
+    
+                <p class="auth-switch">
+                    Нет аккаунта?
+                    <button type="button" id="showRegister">Создать аккаунт</button>
+                </p>
+            </div>
+    
+    
+            <!-- =========================
+                 РЕГИСТРАЦИЯ
+            ========================== -->
+    
+            <div class="auth-form" id="registerForm">
+                <h2>Регистрация</h2>
+                <p class="auth-subtitle">Создайте аккаунт Travel Assistant</p>
+    
+                <form id="registerFormElement">
+                    <div class="form-group">
+                        <label for="registerEmail">Электронная почта</label>
+                        <input type="email" id="registerEmail" placeholder="you@example.com" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="registerPassword">Пароль</label>
+                        <input type="password" id="registerPassword" placeholder="••••••••" required>
+                    </div>
+    
+                    <button type="submit" class="auth-submit">Зарегистрироваться</button>
+                </form>
+    
+                <p class="auth-switch">Уже есть аккаунт?
+                    <button type="button" id="showLogin">Войти</button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/favorites-shared.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="https://api-maps.yandex.ru/v3/?apikey=e64900ea-9ac7-406b-8db3-af42b46d560c&lang=ru_RU"></script>
+    <script src="scripts/food.js"></script>
+</body>
+</html>

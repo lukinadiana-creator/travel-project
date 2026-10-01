@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hotel.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo"><a href="index.html">Travel Assistant</a></h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="tours.html">Поиск туров</a></li>
+                <li><a href="attractions.html">Что посмотреть</a></li>
+                <li><a href="food.html">Где поесть</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li id="favoritesNavItem"><a href="favorites.html">Избранное</a></li>
+                <li><a href="#" id="loginButton">Войти</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="tour-page">
+    
+        <section class="hotel-hero">
+            <div class="hotel-hero__content">
+                <a href="tours.html" class="back-link">← Назад к турам</a>
+                <div class="hotel-stars"></div>
+                <h1></h1>
+                <div class="hotel-location"></div>
+            </div>
+            <!-- <button class="hotel-favorite">♡</button> -->
+        </section>
+    
+        <section class="hotel-info">
+            <div class="hotel-description">
+                <h2>Об отеле</h2>
+                <p></p>
+            </div>
+    
+            <div class="hotel-map">
+                <h2>Расположение</h2>
+                <div id="hotelMap"></div>
+            </div>
+        </section>
+    
+        <div class="booking-steps">
+            <div class="booking-step active" data-step="1">
+                <span>1</span>
+                <b>Номер</b>
+            </div>
+            <div class="step-line"></div>
+            <div class="booking-step" data-step="2">
+                <span>2</span>
+                <b>Перелёт</b>
+            </div>
+            <div class="step-line"></div>
+            <div class="booking-step" data-step="3">
+                <span>3</span>
+                <b>Оформление</b>
+            </div>
+        </div>
+    
+        <section class="booking-section" id="roomSection">
+            <h2 class="section-title">
+                Выберите номер
+                <small></small>
+            </h2>
+    
+            <div class="rooms-grid"></div>
+        </section>
+
+        <section class="booking-section hidden" id="flightSection">
+
+            <div class="selected-info">
+                <span>✓</span>
+                <strong>Выбран номер:</strong>
+                <span id="selectedRoomName"></span>
+                <span>·</span>
+                <span id="selectedRoomPrice"></span>
+        
+                <button id="changeRoom">Изменить</button>
+            </div>
+
+            <h2 class="section-title">
+                Выберите перелёт
+                <small></small>
+            </h2>
+
+            <div class="flights-list"></div>       
+        </section>
+    
+        <section class="booking-section hidden" id="checkoutSection">
+            <h2 class="section-title">Оформление заказа</h2>
+    
+            <div class="order-layout">
+                <div class="order-summary">
+                    <h2>Итого по заказу</h2>
+                    <h3></h3>
+                    <div class="summary-row">
+                        <span id="summaryRoom"></span>
+                        <strong id="summaryRoomPrice"></strong>
+                    </div>
+    
+                    <div class="summary-row">
+                        <span>
+                            Перелёт
+                            <span id="summaryFlight"></span>
+                        </span>
+                        <strong id="summaryFlightPrice"></strong>
+                    </div>
+    
+                    <hr>
+                    <div class="summary-total">
+                        <strong>Итого</strong>
+                        <strong id="summaryTotal"></strong>
+                    </div>
+
+                    <div class="flight-summary"></div>
+                </div>
+    
+                <form class="order-form" id="orderForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Имя</label>
+                            <input type="text" id="firstName" placeholder="Иван" required>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="lastName">Фамилия</label>
+                            <input type="text" id="lastName" placeholder="Иванов" required>
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="email">Электронная почта</label>
+                        <input type="email" id="email" placeholder="ivan@example.com" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" placeholder="+7 (999) 000-00-00" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="wishes">Пожелания (необязательно)</label>
+                        <textarea id="wishes" placeholder="Особые пожелания, поздний заезд..."></textarea>
+                    </div>
+    
+                    <button type="submit" class="order-button">Оформить заказ →</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно подтверждения заказа -->
+    <div class="order-modal-overlay" id="orderConfirmModal">
+        <div class="order-modal">
+            <div class="order-modal-icon">?</div>
+
+            <h2>Оформить заказ?</h2>
+
+            <p>Вы действительно хотите оформить заказ?</p>
+
+            <div class="order-modal-buttons">
+                <button type="button" class="order-modal-cancel" id="cancelOrder">
+                    Отмена
+                </button>
+
+                <button type="button" class="order-modal-confirm" id="confirmOrder">
+                    Да, оформить
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Модальное окно успешного оформления -->
+    <div class="order-modal-overlay" id="orderSuccessModal">
+        <div class="order-modal">
+            <div class="order-modal-icon success">✓</div>
+
+            <h2>Ваш заказ создан</h2>
+
+            <p>Спасибо! Заказ успешно оформлен.</p>
+
+            <button type="button" class="order-modal-confirm success-button" id="closeSuccess">
+                Хорошо
+            </button>
+        </div>
+    </div>
+
+    <div class="auth-overlay" id="authOverlay">
+        <div class="auth-modal">
+            <button class="auth-close" id="authClose">
+                &times;
+            </button>
+    
+            <!-- =========================
+                 ВХОД
+            ========================== -->
+            <div class="auth-form active" id="loginForm">
+                <h2>Вход</h2>
+                <p class="auth-subtitle">Войдите в свой аккаунт Travel Assistant</p>
+                <form id="loginFormElement">
+                    <div class="form-group">
+                        <label for="loginEmail">Электронная почта</label>
+                        <input type="email" id="loginEmail" placeholder="you@example.com" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="loginPassword">Пароль</label>
+                        <input type="password" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+    
+                    <button type="submit" class="auth-submit">Войти</button>
+                </form>
+    
+                <p class="auth-switch">
+                    Нет аккаунта?
+                    <button type="button" id="showRegister">Создать аккаунт</button>
+                </p>
+            </div>
+    
+    
+            <!-- =========================
+                 РЕГИСТРАЦИЯ
+            ========================== -->
+    
+            <div class="auth-form" id="registerForm">
+                <h2>Регистрация</h2>
+                <p class="auth-subtitle">Создайте аккаунт Travel Assistant</p>
+    
+                <form id="registerFormElement">
+                    <div class="form-group">
+                        <label for="registerEmail">Электронная почта</label>
+                        <input type="email" id="registerEmail" placeholder="you@example.com" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="registerPassword">Пароль</label>
+                        <input type="password" id="registerPassword" placeholder="••••••••" required>
+                    </div>
+    
+                    <button type="submit" class="auth-submit">Зарегистрироваться</button>
+                </form>
+    
+                <p class="auth-switch">Уже есть аккаунт?
+                    <button type="button" id="showLogin">Войти</button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="https://api-maps.yandex.ru/v3/?apikey=e64900ea-9ac7-406b-8db3-af42b46d560c&lang=ru_RU"></script>
+    <script src="scripts/hotel.js"></script>
+</body>
+</html>
